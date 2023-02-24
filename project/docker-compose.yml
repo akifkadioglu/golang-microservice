@@ -28,3 +28,17 @@ services:
     deploy:
       mode: replicated
       replicas: 1
+
+  kadiog-service:
+    build:
+      context: ./../kadiog-service
+      dockerfile: ./../kadiog-service/kadiog-service.dockerfile
+
+    restart: always
+
+    ports:
+      - "8082:80"
+      
+    deploy:
+      mode: replicated
+      replicas: 1
